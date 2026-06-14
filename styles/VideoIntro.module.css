@@ -1,0 +1,268 @@
+/* VideoIntro.module.css */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 640px;
+  overflow: hidden;
+  background: #060608;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* ── Ambient blurred BG ── */
+.ambientLayer {
+  position: absolute;
+  inset: -50px;
+  z-index: 0;
+  overflow: hidden;
+}
+.bgVideo {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transform: scale(1.12);
+}
+.ambientBlur {
+  position: absolute; inset: 0;
+  backdrop-filter: blur(48px) saturate(1.5) brightness(0.6);
+  -webkit-backdrop-filter: blur(48px) saturate(1.5) brightness(0.6);
+  background: rgba(6,6,10,0.5);
+}
+
+/* ── Gradient overlays ── */
+.gradOverlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    108deg,
+    rgba(6,6,10,0.88) 0%,
+    rgba(6,6,10,0.6) 42%,
+    rgba(6,6,10,0.12) 100%
+  );
+}
+.gradBottom {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 40%; z-index: 2;
+  background: linear-gradient(to top, rgba(6,6,10,0.98) 0%, transparent 100%);
+}
+.gradSides {
+  position: absolute; inset: 0; z-index: 2;
+  background: radial-gradient(ellipse 75% 100% at 78% 50%, transparent 35%, rgba(6,6,10,0.65) 100%);
+}
+
+/* ── Foreground video ── */
+.videoWrap {
+  position: absolute; right: 0; top: 0;
+  height: 100%; width: 54%; z-index: 2;
+}
+.mainVideo {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+}
+.videoVignette {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to right, rgba(6,6,10,0.95) 0%, transparent 28%),
+    linear-gradient(to top, rgba(6,6,10,0.95) 0%, transparent 22%),
+    linear-gradient(to left, rgba(6,6,10,0.35) 0%, transparent 18%);
+  pointer-events: none;
+}
+
+/* ── Content ── */
+.content {
+  position: relative; z-index: 10;
+  padding: 0 6vw;
+  max-width: 660px;
+  display: flex; flex-direction: column; gap: 0;
+}
+
+.statusBadge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,140,66,0.25);
+  background: rgba(255,140,66,0.08);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.65rem; letter-spacing: 0.14em;
+  color: rgba(255,140,66,0.8);
+  margin-bottom: 1.4rem;
+  width: fit-content;
+}
+.statusDot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #ff8c42;
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+.tagline {
+  display: block;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: clamp(0.55rem, 0.95vw, 0.72rem);
+  letter-spacing: 0.22em;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.nameBlock {
+  display: flex; flex-direction: column;
+  line-height: 0.88; margin-bottom: 1.8rem;
+}
+.firstName {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: clamp(4rem, 10.5vw, 9.5rem);
+  font-weight: 900; letter-spacing: -0.035em; margin: 0;
+  color: #ffffff;
+}
+.lastName {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: clamp(4rem, 10.5vw, 9.5rem);
+  font-weight: 900; letter-spacing: -0.035em; margin: 0;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255,140,66,0.65);
+}
+
+.role {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.82rem, 1.4vw, 1rem);
+  font-weight: 300; color: rgba(255,255,255,0.55);
+  line-height: 1.75; letter-spacing: 0.01em;
+  margin: 0 0 1.8rem; max-width: 400px;
+}
+
+/* ── Stats ── */
+.statsRow {
+  display: flex; align-items: center; gap: 1.4rem;
+  margin-bottom: 1.8rem;
+}
+.stat {
+  display: flex; flex-direction: column; gap: 0.15rem;
+}
+.statNum {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-weight: 800; color: #ff8c42; line-height: 1;
+}
+.statLabel {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.6rem; letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.3); text-transform: uppercase;
+}
+.statDiv {
+  width: 1px; height: 32px;
+  background: rgba(255,255,255,0.1);
+}
+
+/* ── Tags ── */
+.tags {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+}
+.tag {
+  padding: 0.28rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  font-family: 'SF Mono', monospace;
+  font-size: 0.65rem; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.4); text-transform: uppercase;
+  transition: border-color 0.25s, color 0.25s;
+}
+.tag:hover {
+  border-color: rgba(255,140,66,0.4);
+  color: rgba(255,140,66,0.8);
+}
+
+/* ── Controls ── */
+.controls {
+  position: absolute; top: 1.8rem; right: 1.8rem;
+  z-index: 20; display: flex; gap: 0.55rem;
+}
+.controlBtn {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.13);
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  color: rgba(255,255,255,0.75);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.25s, border-color 0.25s, transform 0.2s;
+}
+.controlBtn:hover {
+  background: rgba(255,140,66,0.16);
+  border-color: rgba(255,140,66,0.4);
+  transform: scale(1.08);
+}
+.controlBtn:active { transform: scale(0.94); }
+
+/* ── Sound hint ── */
+.soundHint {
+  position: absolute; bottom: 7rem; right: 1.8rem; z-index: 20;
+  display: flex; align-items: center; gap: 0.45rem;
+  padding: 0.4rem 0.9rem; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(14px);
+  font-family: 'SF Mono', monospace;
+  font-size: 0.64rem; letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.45); text-transform: uppercase;
+  opacity: 0; transform: translateY(8px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+.hintVisible { opacity: 1; transform: translateY(0); }
+.hintDot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: #ff8c42;
+  animation: blink 1.6s ease-in-out infinite;
+}
+
+/* ── Scroll indicator ── */
+.scrollBtn {
+  position: absolute; bottom: 2rem; left: 50%;
+  transform: translateX(-50%); z-index: 20;
+  display: flex; flex-direction: column; align-items: center; gap: 0.45rem;
+  background: none; border: none; cursor: pointer; padding: 0.5rem;
+}
+.scrollLabel {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.28em;
+  color: rgba(255,255,255,0.25); text-transform: uppercase;
+}
+.scrollLine {
+  width: 1px; height: 52px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 1px; position: relative; overflow: hidden;
+}
+.scrollPulse {
+  position: absolute; top: -100%; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(255,140,66,0.9), transparent);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%   { top: -100%; opacity: 0; }
+  15%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { top: 200%; opacity: 0; }
+}
+.scrollBtn:hover .scrollLabel { color: rgba(255,140,66,0.65); }
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .videoWrap { width: 100%; opacity: 0.4; }
+  .gradOverlay { background: rgba(6,6,10,0.7); }
+  .content { padding: 0 5vw; max-width: 100%; }
+  .firstName,.lastName { font-size: clamp(3.2rem, 17vw, 5.5rem); }
+  .statsRow { gap: 1rem; }
+  .controls { top: 1rem; right: 1rem; }
+  .soundHint { bottom: 6rem; right: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollPulse, .statusDot, .hintDot { animation: none; }
+}
