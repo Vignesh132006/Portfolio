@@ -104,7 +104,7 @@ export default function VideoIntro({ videoSrc = '/hero-video.mp4' }) {
 
         <div data-anim className={styles.statusBadge}>
           <span className={styles.statusDot} />
-          Available for opportunities · 2025
+          Available for opportunities · 2026
         </div>
 
         <span data-anim className={styles.tagline}>
