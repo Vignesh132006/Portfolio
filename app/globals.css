@@ -1,0 +1,23 @@
+/* globals.css */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: #060608;
+  color: #fff;
+  overflow-x: hidden;
+  font-family: var(--font-inter), 'Helvetica Neue', Arial, sans-serif;
+}
+
+button { font-family: inherit; }
+
+::selection { background: rgba(255,140,66,0.28); color: #fff; }
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #060608; }
+::-webkit-scrollbar-thumb { background: rgba(255,140,66,0.35); border-radius: 2px; }
