@@ -11,60 +11,54 @@ export default function VideoIntro({ videoSrc = '/hero-video.mp4' }) {
   const heroRef     = useRef(null);
   const contentRef  = useRef(null);
   const [muted,   setMuted]   = useState(true);
-  const [playing, setPlaying] = useState(true);
-  const [showHint, setShowHint] = useState(true);
+  const [playing, setPlaying] = useState(false);
+  const [entered, setEntered] = useState(false);
   const [loaded,  setLoaded]  = useState(false);
 
   useEffect(() => {
     const run = async () => {
       const { gsap } = await import('gsap');
-      const tl = gsap.timeline({ delay: 0.4 });
-      tl.fromTo(heroRef.current,
+      gsap.fromTo(heroRef.current,
         { opacity: 0 },
-        { opacity: 1, duration: 2, ease: 'power2.out' }
+        { opacity: 1, duration: 1.5, ease: 'power2.out' }
       );
-      if (contentRef.current) {
-        const els = contentRef.current.querySelectorAll('[data-anim]');
-        tl.fromTo(els,
-          { opacity: 0, y: 36, filter: 'blur(10px)' },
-          { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.3, stagger: 0.15, ease: 'power3.out' },
-          '-=1'
-        );
-      }
     };
     run();
-  }, [loaded]);
-
-  useEffect(() => {
-    const t = setTimeout(() => setShowHint(false), 4500);
-    return () => clearTimeout(t);
   }, []);
 
-  const toggleMute = useCallback(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    v.muted = !v.muted;
-    setMuted(v.muted);
-    setShowHint(false);
-  }, []);
-
-  const togglePlay = useCallback(() => {
+  const handleEnter = useCallback(async () => {
     const v = videoRef.current;
     const bg = bgVideoRef.current;
-    if (!v) return;
-    if (v.paused) {
-      if (v.ended) { v.currentTime = 0; }
-      v.play();
-      if (bg) {
-        if (bg.ended) { bg.currentTime = 0; }
-        bg.play();
-      }
-      setPlaying(true);
+    if (v) {
+      v.muted = false;
+      v.play().catch(e => console.log("Video play failed:", e));
     }
-    else {
-      v.pause();
-      bg?.pause();
-      setPlaying(false);
+    if (bg) {
+      bg.muted = true;
+      bg.play().catch(e => console.log("BG play failed:", e));
+    }
+    setPlaying(true);
+    setMuted(false);
+
+    const { gsap } = await import('gsap');
+    
+    // Fade out splash overlay
+    gsap.to('#splash', {
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power2.out',
+      onComplete: () => {
+        setEntered(true);
+      }
+    });
+
+    // Stagger reveal main portfolio header and details
+    if (contentRef.current) {
+      const els = contentRef.current.querySelectorAll('[data-anim]');
+      gsap.fromTo(els,
+        { opacity: 0, y: 36, filter: 'blur(10px)' },
+        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.3, stagger: 0.15, ease: 'power3.out' }
+      );
     }
   }, []);
 
@@ -84,7 +78,7 @@ export default function VideoIntro({ videoSrc = '/hero-video.mp4' }) {
       {/* Ambient blurred BG */}
       <div className={styles.ambientLayer}>
         <video ref={bgVideoRef} className={styles.bgVideo}
-          src={videoSrc} autoPlay muted playsInline aria-hidden="true" />
+          src={videoSrc} muted playsInline aria-hidden="true" />
         <div className={styles.ambientBlur} />
       </div>
 
@@ -99,14 +93,14 @@ export default function VideoIntro({ videoSrc = '/hero-video.mp4' }) {
       {/* Foreground video */}
       <div className={styles.videoWrap}>
         <video ref={videoRef} className={styles.mainVideo}
-          src={videoSrc} autoPlay muted={muted} playsInline
+          src={videoSrc} muted={muted} playsInline
           onCanPlay={() => setLoaded(true)}
           onEnded={handleEnded} />
         <div className={styles.videoVignette} />
       </div>
 
       {/* ── Portfolio content ── */}
-      <div ref={contentRef} className={styles.content}>
+      <div ref={contentRef} className={styles.content} style={{ opacity: entered || playing ? 1 : 0 }}>
 
         <div data-anim className={styles.statusBadge}>
           <span className={styles.statusDot} />
@@ -152,8 +146,6 @@ export default function VideoIntro({ videoSrc = '/hero-video.mp4' }) {
 
       </div>
 
-
-
       {/* Scroll indicator */}
       <button className={styles.scrollBtn} onClick={scrollToNext} aria-label="Scroll down">
         <span className={styles.scrollLabel}>EXPLORE</span>
@@ -161,6 +153,23 @@ export default function VideoIntro({ videoSrc = '/hero-video.mp4' }) {
           <div className={styles.scrollPulse} />
         </div>
       </button>
+
+      {/* Splash Screen */}
+      {!entered && (
+        <div id="splash" className={styles.splashOverlay}>
+          <div className={styles.splashGlass}>
+            <span className={styles.splashEyebrow}>CINEMATIC PORTFOLIO</span>
+            <h1 className={styles.splashTitle}>VIGNESH S</h1>
+            <p className={styles.splashDesc}>
+              CSE Student · Competitive Programmer · Full Stack
+            </p>
+            <button className={styles.enterBtn} onClick={handleEnter}>
+              <span className={styles.enterBtnText}>ENTER EXPERIENCE</span>
+              <span className={styles.enterBtnArrow}>→</span>
+            </button>
+          </div>
+        </div>
+      )}
 
     </section>
   );
