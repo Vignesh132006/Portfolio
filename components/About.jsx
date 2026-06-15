@@ -28,10 +28,19 @@ const projects = [
 
 const skills = ['C', 'Python', 'C++', 'Java', 'HTML', 'CSS', 'JavaScript', 'Git', 'GitHub', 'VS Code', 'DSA', 'OOP', 'OS'];
 const certs = [
-  'NPTEL Java Certification — 67%',
-  'Foundation of Python — Infosys Springboard',
-  'Foundation of Java — Infosys Springboard',
-  'Web Development (HTML & CSS) — Infosys Springboard',
+  {
+    name: 'NPTEL Java Certification — 67%',
+    link: 'https://drive.google.com/file/d/1K9dZ43lXQZ-HUexUjdX127Ru__GzvfKU/view?usp=sharing',
+  },
+  {
+    name: 'Foundation of Python — Infosys Springboard',
+  },
+  {
+    name: 'Foundation of Java — Infosys Springboard',
+  },
+  {
+    name: 'Web Development (HTML & CSS) — Infosys Springboard',
+  },
 ];
 
 export default function About() {
@@ -139,7 +148,17 @@ export default function About() {
             <div className={styles.expLeft}>
               <span className={styles.expRole}>Full Stack Developer</span>
               <span className={styles.expCompany}>LearnLogicify Technologies</span>
-              <span className={styles.expType}>Internship</span>
+              <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                <span className={styles.expType}>Internship</span>
+                <a
+                  href="https://drive.google.com/file/d/1YVCpCGXd1uYed38m2jLwWxAsejjox47I/view?usp=sharing"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.certLink}
+                >
+                  Certificate ↗
+                </a>
+              </div>
             </div>
             <div className={styles.expRight}>
               <span className={styles.expDate}>02 Jun – 28 Jun 2025</span>
@@ -182,12 +201,22 @@ export default function About() {
           <span data-reveal className={styles.eyebrow}>CERTIFICATIONS</span>
           <h2 data-reveal className={styles.heading}>Credentials.</h2>
           <div data-reveal className={styles.certList}>
-            {certs.map(c => (
-              <div key={c} className={styles.certItem}>
-                <span className={styles.certIcon}>✦</span>
-                <span>{c}</span>
-              </div>
-            ))}
+            {certs.map(c => {
+              const Tag = c.link ? 'a' : 'div';
+              return (
+                <Tag
+                  key={c.name}
+                  href={c.link}
+                  target={c.link ? "_blank" : undefined}
+                  rel={c.link ? "noreferrer" : undefined}
+                  className={styles.certItem}
+                >
+                  <span className={styles.certIcon}>✦</span>
+                  <span>{c.name}</span>
+                  {c.link && <span className={styles.certLinkIcon}>↗</span>}
+                </Tag>
+              );
+            })}
           </div>
         </div>
       </section>
