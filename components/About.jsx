@@ -6,22 +6,37 @@ const projects = [
   {
     title: 'E-Commerce Website',
     role: 'Frontend Developer',
-    desc: 'Apple AirPods store built with HTML, CSS & JavaScript. Responsive design with product listings, cart UI, and smooth navigation.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
+    desc: 'An immersive Apple AirPods clone featuring high-fidelity animations, interactive product showcases, and a fully functional shopping cart UI.',
+    details: [
+      'Built custom micro-animations using modern CSS transitions and interactive GSAP effects for realistic page transitions.',
+      'Designed a responsive mobile-first UI with product grid systems, dynamic filters, and real-time cart subtotal calculations.',
+      'Leveraged browser localStorage API to persist shopping cart items seamlessly across browser sessions.'
+    ],
+    tags: ['HTML', 'CSS', 'JavaScript', 'GSAP', 'Responsive Design'],
     icon: '🛒',
   },
   {
     title: 'Traffic Detection & Classification',
     role: 'Deep Neural Network',
-    desc: 'Real-time traffic analysis system using Python and deep neural networks, achieving high-accuracy detection and classification.',
-    tags: ['Python', 'Deep Learning', 'Computer Vision'],
+    desc: 'A computer vision pipeline designed for real-time tracking, detection, and classification of vehicle classes in urban traffic environments.',
+    details: [
+      'Trained deep learning architectures (YOLO/SSD) on customized traffic datasets to achieve high precision in multi-class vehicle detection.',
+      'Implemented OpenCV tracking algorithms to monitor vehicular density and compute speed calculations across multiple lanes.',
+      'Designed an administrative analytics dashboard to visualize peak traffic hours and classification statistics.'
+    ],
+    tags: ['Python', 'Deep Learning', 'Computer Vision', 'OpenCV', 'TensorFlow'],
     icon: '🚦',
   },
   {
     title: 'Version Control System',
     role: 'Full Stack Developer',
-    desc: 'Custom VCS built with Python & MySQL featuring file tracking, version history, commit management, rollback, and automated backups.',
-    tags: ['Python', 'MySQL', 'Full Stack'],
+    desc: 'A custom, lightweight version control CLI tool that replicates core Git functionalities for tracking, managing, and backing up source files.',
+    details: [
+      'Developed hashing and compression algorithms to store historical snapshots and track line-by-line code changes.',
+      'Engineered commit, rollback, and status commands using Python, storing file metadata in a MySQL database.',
+      'Built automated daily remote backups to ensure repository persistence and fault-tolerant version tracking.'
+    ],
+    tags: ['Python', 'MySQL', 'System Design', 'File Compression', 'Git Core'],
     icon: '🔧',
   },
 ];
@@ -164,8 +179,10 @@ export default function About() {
               <span className={styles.expDate}>02 Jun – 28 Jun 2025</span>
               <span className={styles.expLoc}>Tamil Nadu, India</span>
               <ul className={styles.expList}>
-                <li>Developed full-stack features integrating frontend UI with backend APIs</li>
-                <li>Managed databases, performed testing &amp; optimised application performance</li>
+                <li>Designed and implemented responsive frontend interfaces, successfully connecting them with backend RESTful APIs.</li>
+                <li>Managed and optimized database schemas and queries in MySQL, reducing query response times and enhancing page loading speed.</li>
+                <li>Conducted system integration testing, automated key workflow validations, and optimized overall frontend bundles.</li>
+                <li>Collaborated on building secure authentication flows and resolved critical performance bottlenecks in dev/prod builds.</li>
               </ul>
             </div>
           </div>
@@ -185,6 +202,11 @@ export default function About() {
                   <span className={styles.projectRole}>{p.role}</span>
                   <h3 className={styles.projectTitle}>{p.title}</h3>
                   <p className={styles.projectDesc}>{p.desc}</p>
+                  <ul className={styles.projectList}>
+                    {p.details.map((detail, idx) => (
+                      <li key={idx}>{detail}</li>
+                    ))}
+                  </ul>
                   <div className={styles.projectTags}>
                     {p.tags.map(t => <span key={t} className={styles.projectTag}>{t}</span>)}
                   </div>
