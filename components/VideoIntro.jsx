@@ -124,22 +124,22 @@ export default function VideoIntro({ videoSrc = '/hero-video.mp4' }) {
         <div data-anim className={styles.statsRow}>
           <div className={styles.stat}>
             <span className={styles.statNum}>1500+</span>
-            <span className={styles.statLabel}>Solved</span>
+            <span className={styles.statLabel}>Problems Solved</span>
           </div>
           <div className={styles.statDiv} />
           <div className={styles.stat}>
             <span className={styles.statNum}>1549</span>
-            <span className={styles.statLabel}>LeetCode</span>
+            <span className={styles.statLabel}>LeetCode Rating</span>
           </div>
           <div className={styles.statDiv} />
           <div className={styles.stat}>
             <span className={styles.statNum}>1419</span>
-            <span className={styles.statLabel}>CodeChef</span>
+            <span className={styles.statLabel}>CodeChef Rating</span>
           </div>
           <div className={styles.statDiv} />
           <div className={styles.stat}>
             <span className={styles.statNum}>150+</span>
-            <span className={styles.statLabel}>Contests</span>
+            <span className={styles.statLabel}>Overall Contest</span>
           </div>
         </div>
 
