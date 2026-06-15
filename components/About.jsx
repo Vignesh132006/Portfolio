@@ -246,22 +246,22 @@ export default function About() {
           <span data-reveal className={styles.eyebrow}>CERTIFICATIONS</span>
           <h2 data-reveal className={styles.heading}>Credentials.</h2>
           <div data-reveal className={styles.certList}>
-            {certs.map(c => {
-              const Tag = c.link ? 'a' : 'div';
-              return (
-                <Tag
-                  key={c.name}
-                  href={c.link}
-                  target={c.link ? "_blank" : undefined}
-                  rel={c.link ? "noreferrer" : undefined}
-                  className={styles.certItem}
-                >
-                  <span className={styles.certIcon}>✦</span>
-                  <span>{c.name}</span>
-                  {c.link && <span className={styles.certLinkIcon}>↗</span>}
-                </Tag>
-              );
-            })}
+            {certs.map(c => (
+              <div key={c.name} className={styles.certItem}>
+                <span className={styles.certIcon}>✦</span>
+                <span>{c.name}</span>
+                {c.link && (
+                  <a
+                    href={c.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={styles.certLink}
+                  >
+                    Certificate ↗
+                  </a>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>

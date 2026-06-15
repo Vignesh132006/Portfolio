@@ -180,6 +180,11 @@
   background: rgba(255,140,66,0.08);
   color: rgba(255,140,66,0.9);
 }
+.certItem .certLink {
+  margin-left: auto;
+  margin-top: 0;
+  flex-shrink: 0;
+}
 .expRight { display: flex; flex-direction: column; gap: 0.5rem; }
 .expDate {
   font-family: 'SF Mono', monospace;
@@ -296,16 +301,6 @@
   background: rgba(255,255,255,0.04);
 }
 .certIcon { color: rgba(255,140,66,0.7); font-size: 0.8rem; flex-shrink: 0; }
-.certLinkIcon {
-  margin-left: auto;
-  font-size: 0.8rem;
-  color: rgba(255,140,66,0.6);
-  transition: transform 0.2s;
-}
-.certItem:hover .certLinkIcon {
-  transform: translate(2px, -2px);
-  color: rgba(255,140,66,0.9);
-}
 
 /* Contact */
 .contactGrid {
