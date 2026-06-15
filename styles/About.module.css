@@ -6,11 +6,10 @@
 }
 
 .section {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8rem 6vw;
+  padding: 4.5rem 6vw;
   position: relative;
 }
 
@@ -285,7 +284,7 @@
 
 /* Mobile */
 @media (max-width: 768px) {
-  .section { padding: 5rem 5vw; min-height: auto; }
+  .section { padding: 3rem 5vw; }
   .statsGrid { grid-template-columns: repeat(2,1fr); }
   .expCard { grid-template-columns: 1fr; gap: 1rem; }
   .contactGrid { grid-template-columns: repeat(2,1fr); }
