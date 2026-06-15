@@ -143,9 +143,9 @@ export default function About() {
               <span className={styles.statMeta}>Competitive Programming</span>
             </div>
             <div className={styles.statCard}>
-              <span className={styles.statBig}>150+</span>
-              <span className={styles.statSub}>Contests</span>
-              <span className={styles.statMeta}>Weekly Participation</span>
+              <span className={styles.statBig}>1549</span>
+              <span className={styles.statSub}>LeetCode Rating</span>
+              <span className={styles.statMeta}>Competitive Programming</span>
             </div>
             <div className={styles.statCard}>
               <span className={styles.statBig}>7.95</span>
