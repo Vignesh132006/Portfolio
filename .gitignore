@@ -25,7 +25,6 @@ yarn-error.log*
 
 # Verifying test records / local clips
 video/
-/public/hero-video.mp4
 *.webp
 *.png
 
