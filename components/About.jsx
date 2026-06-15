@@ -49,12 +49,35 @@ const certs = [
   },
   {
     name: 'Foundation of Python — Infosys Springboard',
+    link: 'https://drive.google.com/file/d/1NOaLm8wETeVE5HvCn1LX-Ko6mnDIyqaX/view?usp=sharing',
   },
   {
     name: 'Foundation of Java — Infosys Springboard',
+    link: 'https://drive.google.com/file/d/1HqtFn2xmXDAdlmTPf44CcozAkwg9AHgR/view?usp=sharing',
   },
   {
     name: 'Web Development (HTML & CSS) — Infosys Springboard',
+    link: 'https://drive.google.com/file/d/1OQcL7VWlPawJynZFF80nsM1ngiscwsD7/view?usp=sharing',
+  },
+  {
+    name: 'JavaScript — Infosys Springboard',
+    link: 'https://drive.google.com/file/d/1vlkJuzf-dQosqiFrsza6wk-ADYf4yFqc/view?usp=sharing',
+  },
+  {
+    name: 'React Web Developer Certification — Infosys Springboard',
+    link: 'https://drive.google.com/file/d/1Xz6ASTKglsFN44bFtvDRW-5AoATHg3b4/view?usp=sharing',
+  },
+  {
+    name: 'Linux Fundamentals — Red Hat',
+    link: 'https://drive.google.com/file/d/1kDDcNLa4wZtU7QNsHb_zt2hjN91-ypA6/view?usp=sharing',
+  },
+  {
+    name: 'SQL Basic — HackerRank',
+    link: 'https://drive.google.com/file/d/1x_08RPlic6ZMLRNCn7KjFNHfYOCktMGr/view',
+  },
+  {
+    name: 'Agent AI Workshop',
+    link: 'https://drive.google.com/file/d/11DgP2CN4Co0OefF1eUEkLPXnNT_0YtYe/view?usp=sharing',
   },
 ];
 

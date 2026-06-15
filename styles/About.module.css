@@ -287,11 +287,13 @@
   background: rgba(255,255,255,0.02);
   font-family: 'Inter', sans-serif;
   font-size: 0.9rem; color: rgba(255,255,255,0.55);
-  transition: border-color 0.25s, color 0.25s;
+  transition: all 0.25s;
+  text-decoration: none;
 }
 .certItem:hover {
   border-color: rgba(255,140,66,0.25);
   color: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.04);
 }
 .certIcon { color: rgba(255,140,66,0.7); font-size: 0.8rem; flex-shrink: 0; }
 .certLinkIcon {
