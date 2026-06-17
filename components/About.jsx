@@ -26,6 +26,7 @@ const projects = [
     ],
     tags: ['Python', 'Deep Learning', 'Computer Vision', 'OpenCV', 'TensorFlow'],
     icon: '🚦',
+    link: 'https://huggingface.co/spaces/vignesh132006/Traffic_Analytics',
   },
   {
     title: 'Version Control System',
@@ -233,6 +234,16 @@ export default function About() {
                   <div className={styles.projectTags}>
                     {p.tags.map(t => <span key={t} className={styles.projectTag}>{t}</span>)}
                   </div>
+                  {p.link && (
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={styles.projectLink}
+                    >
+                      Hugging Face Space ↗
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
