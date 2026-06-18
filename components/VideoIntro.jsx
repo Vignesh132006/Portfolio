@@ -111,10 +111,10 @@ export default function VideoIntro({ videoSrc = '/hero-video.mp4' }) {
           CSE STUDENT · COMPETITIVE PROGRAMMER · FULL STACK
         </span>
 
-        <div className={styles.nameBlock}>
-          <h1 data-anim className={styles.firstName}>VIGNESH</h1>
-          <h1 data-anim className={styles.lastName}>S</h1>
-        </div>
+        <h1 className={styles.nameBlock}>
+          <span data-anim className={styles.firstName}>VIGNESH</span>
+          <span data-anim className={styles.lastName}>S</span>
+        </h1>
 
         <p data-anim className={styles.roleTagline}>
           Full Stack Developer | MERN Stack | Competitive Programmer
