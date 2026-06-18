@@ -116,9 +116,13 @@ export default function VideoIntro({ videoSrc = '/hero-video.mp4' }) {
           <h1 data-anim className={styles.lastName}>S</h1>
         </div>
 
+        <p data-anim className={styles.roleTagline}>
+          Full Stack Developer | MERN Stack | Competitive Programmer
+        </p>
+
         <p data-anim className={styles.role}>
-          Building real-world web solutions &amp; scalable systems.<br/>
-          1500+ problems solved across LeetCode, CodeChef &amp; GFG.
+          Passionate about solving complex algorithmic challenges and crafting robust, scalable web applications.
+          Bringing experience in the MERN stack and a strong problem-solving foundation to build high-performance software.
         </p>
 
         <div data-anim className={styles.statsRow}>
@@ -166,7 +170,7 @@ export default function VideoIntro({ videoSrc = '/hero-video.mp4' }) {
             <span className={styles.splashEyebrow}>CINEMATIC PORTFOLIO</span>
             <h1 className={styles.splashTitle}>VIGNESH S</h1>
             <p className={styles.splashDesc}>
-              CSE Student · Competitive Programmer · Full Stack
+              Full Stack Developer | MERN Stack | Competitive Programmer
             </p>
             <button className={styles.enterBtn} onClick={handleEnter}>
               <span className={styles.enterBtnText}>ENTER EXPERIENCE</span>
