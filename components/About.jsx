@@ -6,7 +6,7 @@ const projects = [
   {
     title: 'E-Commerce Website',
     role: 'Frontend Developer',
-    desc: 'An immersive Apple AirPods clone featuring high-fidelity animations, interactive product showcases, and a fully functional shopping cart UI.',
+    desc: 'An immersive Apple AirPods clone featuring high-fidelity animations, interactive product showcases, and a fully functional shopping cart UI. Designed as a seamless, high-performance web experience.',
     details: [
       'Built custom micro-animations using modern CSS transitions and interactive GSAP effects for realistic page transitions.',
       'Designed a responsive mobile-first UI with product grid systems, dynamic filters, and real-time cart subtotal calculations.',
@@ -14,11 +14,12 @@ const projects = [
     ],
     tags: ['HTML', 'CSS', 'JavaScript', 'GSAP', 'Responsive Design'],
     icon: '🛒',
+    github: 'https://github.com/Vignesh132006/AirPods-Store-Clone',
   },
   {
     title: 'Traffic Detection & Classification',
     role: 'Deep Neural Network',
-    desc: 'A computer vision pipeline designed for real-time tracking, detection, and classification of vehicle classes in urban traffic environments.',
+    desc: 'A computer vision pipeline designed for real-time tracking, detection, and classification of vehicle classes in urban traffic environments. Powered by custom deep neural network models.',
     details: [
       'Trained deep learning architectures (YOLO/SSD) on customized traffic datasets to achieve high precision in multi-class vehicle detection.',
       'Implemented OpenCV tracking algorithms to monitor vehicular density and compute speed calculations across multiple lanes.',
@@ -26,12 +27,13 @@ const projects = [
     ],
     tags: ['Python', 'Deep Learning', 'Computer Vision', 'OpenCV', 'TensorFlow'],
     icon: '🚦',
+    github: 'https://github.com/Vignesh132006/Traffic-Detection-Classification',
     link: 'https://huggingface.co/spaces/vignesh132006/Traffic_Analytics',
   },
   {
     title: 'Version Control System',
     role: 'Full Stack Developer',
-    desc: 'A custom, lightweight version control CLI tool that replicates core Git functionalities for tracking, managing, and backing up source files.',
+    desc: 'A custom, lightweight version control CLI tool that replicates core Git functionalities for tracking, managing, and backing up source files. Integrates file compression and database tracking.',
     details: [
       'Developed hashing and compression algorithms to store historical snapshots and track line-by-line code changes.',
       'Engineered commit, rollback, and status commands using Python, storing file metadata in a MySQL database.',
@@ -39,6 +41,7 @@ const projects = [
     ],
     tags: ['Python', 'MySQL', 'System Design', 'File Compression', 'Git Core'],
     icon: '🔧',
+    github: 'https://github.com/Vignesh132006/Version-Control-System-CLI',
   },
 ];
 
@@ -234,16 +237,28 @@ export default function About() {
                   <div className={styles.projectTags}>
                     {p.tags.map(t => <span key={t} className={styles.projectTag}>{t}</span>)}
                   </div>
-                  {p.link && (
-                    <a
-                      href={p.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className={styles.projectLink}
-                    >
-                      Hugging Face Space ↗
-                    </a>
-                  )}
+                  <div className={styles.projectLinks}>
+                    {p.github && (
+                      <a
+                        href={p.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={styles.projectLink}
+                      >
+                        GitHub Code ↗
+                      </a>
+                    )}
+                    {p.link && (
+                      <a
+                        href={p.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={styles.projectLink}
+                      >
+                        {p.title === 'Traffic Detection & Classification' ? 'Hugging Face Space ↗' : 'Live Demo ↗'}
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
