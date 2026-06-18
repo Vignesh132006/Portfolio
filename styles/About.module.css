@@ -345,10 +345,9 @@
 }
 .certIcon { color: rgba(255,140,66,0.7); font-size: 0.8rem; flex-shrink: 0; }
 
-/* Contact */
 .contactGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.05);
@@ -375,6 +374,9 @@
 }
 
 /* Mobile */
+@media (max-width: 1024px) {
+  .contactGrid { grid-template-columns: repeat(3, 1fr); }
+}
 @media (max-width: 768px) {
   .section { padding: 3rem 5vw; }
   .statsGrid { grid-template-columns: repeat(2,1fr); }

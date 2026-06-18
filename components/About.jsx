@@ -327,10 +327,15 @@ export default function About() {
               <span className={styles.contactLabel}>Email</span>
               <span className={styles.contactVal}>kit27.cse62@gmail.com</span>
             </a>
-            <a href="tel:9489251910" className={styles.contactCard}>
-              <span className={styles.contactIcon}>☎</span>
-              <span className={styles.contactLabel}>Phone</span>
-              <span className={styles.contactVal}>+91 9489251910</span>
+            <a href="https://www.linkedin.com/in/vignesh132006" target="_blank" rel="noreferrer" className={styles.contactCard}>
+              <span className={styles.contactIcon}>💼</span>
+              <span className={styles.contactLabel}>LinkedIn</span>
+              <span className={styles.contactVal}>vignesh132006</span>
+            </a>
+            <a href="https://github.com/Vignesh132006" target="_blank" rel="noreferrer" className={styles.contactCard}>
+              <span className={styles.contactIcon}>⬡</span>
+              <span className={styles.contactLabel}>GitHub</span>
+              <span className={styles.contactVal}>Vignesh132006</span>
             </a>
             <a href="https://leetcode.com/u/vickysaravanan/" target="_blank" rel="noreferrer" className={styles.contactCard}>
               <span className={styles.contactIcon}>⌨</span>
@@ -342,16 +347,21 @@ export default function About() {
               <span className={styles.contactLabel}>CodeChef</span>
               <span className={styles.contactVal}>vignesh062</span>
             </a>
-            <a href="https://github.com/Vignesh132006" target="_blank" rel="noreferrer" className={styles.contactCard}>
-              <span className={styles.contactIcon}>⬡</span>
-              <span className={styles.contactLabel}>GitHub</span>
-              <span className={styles.contactVal}>Vignesh132006</span>
+            <a href="tel:9489251910" className={styles.contactCard}>
+              <span className={styles.contactIcon}>☎</span>
+              <span className={styles.contactLabel}>Phone</span>
+              <span className={styles.contactVal}>+91 9489251910</span>
             </a>
             <div className={styles.contactCard}>
               <span className={styles.contactIcon}>📍</span>
               <span className={styles.contactLabel}>Location</span>
               <span className={styles.contactVal}>Coimbatore, Tamil Nadu</span>
             </div>
+            <a href="/resume.pdf" download className={styles.contactCard}>
+              <span className={styles.contactIcon}>📄</span>
+              <span className={styles.contactLabel}>Resume</span>
+              <span className={styles.contactVal}>Download PDF</span>
+            </a>
           </div>
         </div>
       </section>
