@@ -327,10 +327,10 @@ export default function About() {
               <span className={styles.contactLabel}>Email</span>
               <span className={styles.contactVal}>kit27.cse62@gmail.com</span>
             </a>
-            <a href="https://www.linkedin.com/in/vignesh132006" target="_blank" rel="noreferrer" className={styles.contactCard}>
+            <a href="https://www.linkedin.com/in/vignesh-s-0246342a5" target="_blank" rel="noreferrer" className={styles.contactCard}>
               <span className={styles.contactIcon}>💼</span>
               <span className={styles.contactLabel}>LinkedIn</span>
-              <span className={styles.contactVal}>vignesh132006</span>
+              <span className={styles.contactVal}>vignesh-s-0246342a5</span>
             </a>
             <a href="https://github.com/Vignesh132006" target="_blank" rel="noreferrer" className={styles.contactCard}>
               <span className={styles.contactIcon}>⬡</span>
