@@ -189,6 +189,46 @@
   color: rgba(255,140,66,0.8);
 }
 
+.actionsRow {
+  margin-top: 1.8rem;
+}
+.resumeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.8rem;
+  border-radius: 999px;
+  background: #ff8c42;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 8px 20px rgba(255, 140, 66, 0.25);
+  width: fit-content;
+}
+.resumeBtnText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  color: #050508;
+}
+.resumeBtnIcon {
+  font-size: 0.82rem;
+  color: #050508;
+  transition: transform 0.25s ease;
+}
+.resumeBtn:hover {
+  transform: translateY(-2px);
+  background: #ffa166;
+  box-shadow: 0 12px 28px rgba(255, 140, 66, 0.4);
+}
+.resumeBtn:hover .resumeBtnIcon {
+  transform: translateY(2px);
+}
+.resumeBtn:active {
+  transform: translateY(1px);
+}
+
 /* ── Controls ── */
 .controls {
   position: absolute; top: 1.8rem; right: 1.8rem;

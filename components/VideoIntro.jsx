@@ -153,6 +153,17 @@ export default function VideoIntro({ videoSrc = '/hero-video.mp4' }) {
           ))}
         </div>
 
+        <div data-anim className={styles.actionsRow}>
+          <a
+            href="/resume.pdf"
+            download
+            className={styles.resumeBtn}
+          >
+            <span className={styles.resumeBtnText}>DOWNLOAD RESUME</span>
+            <span className={styles.resumeBtnIcon}>↓</span>
+          </a>
+        </div>
+
       </div>
 
       {/* Scroll indicator */}
