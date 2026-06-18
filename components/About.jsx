@@ -45,7 +45,24 @@ const projects = [
   },
 ];
 
-const skills = ['C', 'Python', 'C++', 'Java', 'HTML', 'CSS', 'JavaScript', 'Git', 'GitHub', 'VS Code', 'DSA', 'OOP', 'OS'];
+const skillsGrouped = [
+  {
+    category: 'Languages',
+    items: ['C', 'C++', 'Java', 'Python'],
+  },
+  {
+    category: 'Web',
+    items: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'Express'],
+  },
+  {
+    category: 'Database',
+    items: ['MySQL', 'MongoDB'],
+  },
+  {
+    category: 'Tools',
+    items: ['Git', 'GitHub', 'VS Code'],
+  },
+];
 const certs = [
   {
     name: 'NPTEL Java Certification — 67%',
@@ -165,9 +182,16 @@ export default function About() {
         <div className={styles.inner}>
           <span data-reveal className={styles.eyebrow}>SKILLS</span>
           <h2 data-reveal className={styles.heading}>Tech stack.</h2>
-          <div data-reveal className={styles.skillsWrap}>
-            {skills.map(s => (
-              <span key={s} className={styles.skillPill}>{s}</span>
+          <div data-reveal className={styles.skillsGroupedContainer}>
+            {skillsGrouped.map((group) => (
+              <div key={group.category} className={styles.skillGroup}>
+                <h3 className={styles.skillGroupTitle}>{group.category}</h3>
+                <div className={styles.skillsWrap}>
+                  {group.items.map(s => (
+                    <span key={s} className={styles.skillPill}>{s}</span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
           <div data-reveal className={styles.softSkills}>

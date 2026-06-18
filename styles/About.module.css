@@ -96,6 +96,24 @@
 }
 
 /* Skills */
+.skillsGroupedContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.skillGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.skillGroupTitle {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,140,66,0.85);
+  text-transform: uppercase;
+  margin: 0;
+}
 .skillsWrap {
   display: flex; flex-wrap: wrap; gap: 0.6rem;
 }
