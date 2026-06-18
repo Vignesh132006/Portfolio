@@ -313,6 +313,16 @@
   .controls { top: 1rem; right: 1rem; }
   .soundHint { bottom: 6rem; right: 1rem; }
 }
+@media (max-width: 480px) {
+  .statsRow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem 1.5rem;
+  }
+  .statDiv {
+    display: none;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .scrollPulse, .statusDot, .hintDot { animation: none; }
