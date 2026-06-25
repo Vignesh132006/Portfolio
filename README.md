@@ -23,7 +23,7 @@ Three.js bokeh particles, GSAP scroll animations, and a talking-head video hero.
 | About | Bio + 4-stat grid (problems, rating, contests, CGPA) |
 | Skills | Tech pill grid + soft skills |
 | Experience | LearnLogicify internship card |
-| Projects | E-Commerce · Traffic DNN · Version Control System |
+| Projects | NeuroLoop · E-Commerce · Traffic DNN · Version Control System |
 | Certifications | 3 Infosys Springboard courses |
 | Contact | Email, phone, LeetCode, CodeChef, GitHub, location |
 
