@@ -9,10 +9,10 @@ const projects = [
     desc: 'A full-stack AI-powered learning journal that combines spaced repetition, AI quiz generation, Socratic tutoring, and weakness detection to optimize and supercharge study habits.',
     details: [
       'Engineered an SM-2-inspired spaced repetition revision schedule (1, 3, 7, 14, 30 days) adjusting dynamically based on user-confidence inputs.',
-      'Integrated Google Gemini AI for automated bullet-point summarization, custom MCQ quizzes, and interactive Socratic chat tutoring.',
+      'Integrated Groq API for ultra-fast automated bullet-point summarization, custom MCQ quizzes, and interactive Socratic chat tutoring.',
       'Developed robust Express.js REST APIs with JWT authentication, MongoDB schemas, activity heatmaps, and streak tracking.'
     ],
-    tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Gemini AI', 'Vanilla CSS'],
+    tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Groq API', 'Vanilla CSS'],
     icon: '🧠',
     github: 'https://github.com/Vignesh132006/Neuroloop',
     link: 'https://neuroloop-7mbx0v9d6-vigneshs-projects-b9dfb200.vercel.app',
