@@ -18,19 +18,6 @@ const projects = [
     link: 'https://neuroloop-7mbx0v9d6-vigneshs-projects-b9dfb200.vercel.app',
   },
   {
-    title: 'E-Commerce Website',
-    role: 'Frontend Developer',
-    desc: 'An immersive Apple AirPods clone featuring high-fidelity animations, interactive product showcases, and a fully functional shopping cart UI. Designed as a seamless, high-performance web experience.',
-    details: [
-      'Built custom micro-animations using modern CSS transitions and interactive GSAP effects for realistic page transitions.',
-      'Designed a responsive mobile-first UI with product grid systems, dynamic filters, and real-time cart subtotal calculations.',
-      'Leveraged browser localStorage API to persist shopping cart items seamlessly across browser sessions.'
-    ],
-    tags: ['HTML', 'CSS', 'JavaScript', 'GSAP', 'Responsive Design'],
-    icon: '🛒',
-    github: 'https://github.com/Vignesh132006/AirPods-Store-Clone',
-  },
-  {
     title: 'Traffic Detection & Classification',
     role: 'Deep Neural Network',
     desc: 'A computer vision pipeline designed for real-time tracking, detection, and classification of vehicle classes in urban traffic environments. Powered by custom deep neural network models.',
@@ -46,7 +33,7 @@ const projects = [
   },
   {
     title: 'Version Control System',
-    role: 'Full Stack Developer',
+    role: 'Backend Developer',
     desc: 'A custom, lightweight version control CLI tool that replicates core Git functionalities for tracking, managing, and backing up source files. Integrates file compression and database tracking.',
     details: [
       'Developed hashing and compression algorithms to store historical snapshots and track line-by-line code changes.',
