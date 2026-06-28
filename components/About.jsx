@@ -15,7 +15,7 @@ const projects = [
     tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Groq API', 'Vanilla CSS'],
     icon: '🧠',
     github: 'https://github.com/Vignesh132006/Neuroloop',
-    link: 'https://neuroloop-7mbx0v9d6-vigneshs-projects-b9dfb200.vercel.app',
+    link: 'https://neuroloop-wine.vercel.app',
   },
   {
     title: 'Traffic Detection & Classification',
