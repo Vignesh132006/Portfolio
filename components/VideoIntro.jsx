@@ -155,7 +155,7 @@ export default function VideoIntro({ videoSrc = '/hero-video.mp4' }) {
 
         <div data-anim className={styles.actionsRow}>
           <a
-            href="/resume.pdf"
+            href="/resume/resume.pdf"
             download
             className={styles.resumeBtn}
           >

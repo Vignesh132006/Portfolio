@@ -358,7 +358,7 @@ export default function About() {
               <span className={styles.contactLabel}>Location</span>
               <span className={styles.contactVal}>Coimbatore, Tamil Nadu</span>
             </div>
-            <a href="/resume.pdf" download className={styles.contactCard}>
+            <a href="/resume/resume.pdf" download className={styles.contactCard}>
               <span className={styles.contactIcon}>📄</span>
               <span className={styles.contactLabel}>Resume</span>
               <span className={styles.contactVal}>Download PDF</span>
